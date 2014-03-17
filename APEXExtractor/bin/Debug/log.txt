@@ -1,0 +1,22 @@
+2014-03-14 10:09:13,814 [10] DEBUG [Ladder.Steps] Logon til Daisy med værdi for 'DEFAULTDATABASE'
+
+2014-03-14 10:09:13,865 [10] DEBUG [Ladder.Steps] Execute SQL
+
+2014-03-14 10:09:13,870 [10] DEBUG [Ladder.Steps] Write result til filen '3ej0uz1m.3og'
+
+2014-03-14 10:09:13,892 [10] DEBUG [Ladder.Steps] Brug ProcessStartInfo class
+
+2014-03-14 10:09:13,897 [10] DEBUG [Ladder.Steps] Skriv 'Transform -s:source -xsl:stylesheet -o:output'
+
+2014-03-14 10:09:13,907 [10] DEBUG [Ladder.Steps] Dvs: 'Transform -s:c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\3ej0uz1m.3og -xsl:c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\DEFAULT.XSLT -o:Test.xml'
+
+2014-03-14 10:09:13,915 [10] DEBUG [Ladder.Steps] Forudsætter at saxon er installeret
+
+2014-03-14 10:09:13,920 [10] DEBUG [Ladder.Steps] Alternativt: Kald 'DoSaxonInternally(XSLTFile, targetFile);'
+
+2014-03-14 10:09:13,925 [10] DEBUG [Ladder.Steps] Kender ikke den øvre grænse for mængden af data
+
+2014-03-14 10:09:13,931 [10] DEBUG [Ladder.Steps] Validating sourcefile 'c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\Test.xml' with schema 'c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\DEFAULT.XSD'
+
+2014-03-14 10:09:13,939 [10] DEBUG [Ladder.Steps] TotalFlow done!
+
