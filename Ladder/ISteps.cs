@@ -16,19 +16,24 @@
         {
             get; set;
         }
-
+        DirectoryInfo LogFolder
+        {
+            get; set;
+        }
         #endregion Properties
 
         #region Methods
 
-        FileInfo GetDaisyXML();
-
         void TotalFlow(FileInfo apexFile);
 
-        void TransformDaisy2APEX(FileInfo sourceFile, FileInfo targetFile);
+        int GetDaisyXML(FileInfo fileInfo, int sidsthentet);
+
+        void TransformDaisy2APEX(DirectoryInfo sourcedir, DirectoryInfo targetdir);
 
         void ValidateAPEXFile(FileInfo sourceFile);
 
         #endregion Methods
+
+      
     }
 }

@@ -15,7 +15,7 @@
 
         #region Methods
 
-        void TransformXML(FileInfo sourceFile, FileInfo targetFile);
+        void TransformXML(DirectoryInfo sourcedir, DirectoryInfo targetdir);
 
         #endregion Methods
     }

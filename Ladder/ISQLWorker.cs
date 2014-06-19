@@ -15,7 +15,7 @@
 
         #region Methods
 
-        FileInfo QueryDaisy();
+        int QueryDaisy(FileInfo newXmlFile, int sidsthentet);
 
         #endregion Methods
     }

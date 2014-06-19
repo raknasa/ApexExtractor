@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APEXExtractor", "APEXExtractor\APEXExtractor.csproj", "{A9F608E6-D599-48D3-B5DE-24C8B151F3F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APEXExtractor", "APEXExtraktor\APEXExtractor.csproj", "{A9F608E6-D599-48D3-B5DE-24C8B151F3F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ladder", "Ladder\Ladder.csproj", "{3715A24A-616F-4F7A-9417-BF9CEFDAA281}"
 EndProject

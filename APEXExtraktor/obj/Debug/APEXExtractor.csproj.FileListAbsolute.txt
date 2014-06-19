@@ -1,0 +1,76 @@
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.exe
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.pdb
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\CmdLine.dll
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.dll
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.pdb
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csprojResolveAssemblyReference.cache
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Properties.Resources.resources
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csproj.GenerateResource.Cache
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.exe
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.pdb
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Form1.resources
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.dll
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.xml
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he-api.dll
+c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.exe
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.pdb
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.exe
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.pdb
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\CmdLine.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he-api.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Core.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.XML.API.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.Runtime.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Text.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Charsets.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Util.dll
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.pdb
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.xml
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csprojResolveAssemblyReference.cache
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Form1.resources
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Properties.Resources.resources
+C:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csproj.GenerateResource.Cache
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.exe
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.pdb
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\lib\APExTransform.xslt
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.exe
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.pdb
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\CmdLine.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he-api.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\saxon9he.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Core.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.XML.API.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.Runtime.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Text.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Charsets.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\IKVM.OpenJDK.Util.dll
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\Ladder.pdb
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\log4net.xml
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csprojResolveAssemblyReference.cache
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Form1.resources
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.Properties.Resources.resources
+D:\APEX\APEXExtraktor\APEXExtraktor\obj\Debug\APEXExtractor.csproj.GenerateResource.Cache
+D:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.exe.config
+C:\APEX\APEXExtraktor\APEXExtraktor\bin\Debug\APEXExtractor.exe.config
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\APEXExtractor.exe.config
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.exe
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.pdb
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\APEXExtractor.exe
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\APEXExtractor.pdb
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\CmdLine.dll
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\Ladder.dll
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\saxon9he-api.dll
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\log4net.dll
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\saxon9he.dll
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\Ladder.pdb
+D:\Repository\APEXExtractor\APEXExtraktor\bin\Debug\log4net.xml
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.csprojResolveAssemblyReference.cache
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.Form1.resources
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.Properties.Resources.resources
+D:\Repository\APEXExtractor\APEXExtraktor\obj\Debug\APEXExtractor.csproj.GenerateResource.Cache

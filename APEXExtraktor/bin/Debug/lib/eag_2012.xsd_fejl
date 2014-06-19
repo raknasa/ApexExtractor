@@ -1,0 +1,1166 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML>><HTML><HEAD>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type"></HEAD>
+<BODY><PRE>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!--
+    EAG 2012 Schema
+    Version: 0.2
+    Date: 20130415
+    Editor: APEx project (www.apex-project.eu)
+--&gt;
+&lt;xs:schema xmlns="http://www.archivesportaleurope.net/Portal/profiles/eag_2012/" targetNamespace="http://www.archivesportaleurope.net/Portal/profiles/eag_2012/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+    &lt;xs:import namespace="http://www.w3.org/XML/1998/namespace"
+               schemaLocation="http://www.w3.org/2007/08/xml.xsd"/&gt;
+
+    &lt;xs:element name="eag"&gt;
+        &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="control" type="control"/&gt;
+                &lt;xs:element name="archguide" type="archguide"/&gt;
+                &lt;xs:element name="relations" type="relations" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute name="audience" use="required"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:token"&gt;
+                        &lt;xs:enumeration value="external"/&gt;
+                        &lt;xs:enumeration value="internal"/&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute ref="xml:base"/&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:attributeGroup name="href"&gt;
+        &lt;xs:attribute name="href" type="xs:anyURI"/&gt;
+    &lt;/xs:attributeGroup&gt;
+
+    &lt;!-- ###############
+       CONTROL
+   ################ --&gt;
+
+    &lt;xs:complexType name="control"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="recordId" type="recordId"/&gt;
+                &lt;xs:element name="otherRecordId" type="otherRecordId" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="maintenanceAgency" type="maintenanceAgency"/&gt;
+                &lt;xs:element name="maintenanceStatus" type="maintenanceStatus"/&gt;
+                &lt;xs:element name="maintenanceHistory" type="maintenanceHistory"/&gt;
+                &lt;xs:element name="languageDeclarations" type="languageDeclarations" minOccurs="0"/&gt;
+                &lt;xs:element name="conventionDeclaration" type="conventionDeclaration" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="localControl" type="localControl" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="localTypeDeclaration" type="localTypeDeclaration" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="publicationStatus" type="publicationStatus" minOccurs="0"/&gt;
+                &lt;xs:element name="sources" type="sources" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="recordId"&gt;
+        &lt;xs:restriction base="xs:token"&gt;
+            &lt;xs:pattern
+                    value="((AF|AX|AL|DZ|AS|AD|AO|AI|AQ|AG|AR|AM|AW|AU|AT|AZ|BS|BH|BD|BB|BY|BE|BZ|BJ|BM|BT|BO|BA|BW|BV|BR|IO|BN|BG|BF|BI|KH|CM|CA|CV|KY|CF|TD|CL|CN|CX|CC|CO|KM|CG|CD|CK|CR|CI|HR|CU|CY|CZ|DK|DJ|DM|DO|EC|EG|SV|GQ|ER|EE|ET|FK|FO|FJ|FI|FR|GF|PF|TF|GA|GM|GE|DE|GH|GI|GR|GL|GD|GP|GU|GT|GN|GW|GY|HT|HM|VA|HN|HK|HU|IS|IN|ID|IR|IQ|IE|IL|IT|JM|JP|JO|KZ|KE|KI|KP|KR|KW|KG|LA|LV|LB|LS|LR|LY|LI|LT|LU|MO|MK|MG|MW|MY|MV|ML|MT|MH|MQ|MR|MU|YT|MX|FM|MD|MC|MN|MS|MA|MZ|MM|NA|NR|NP|NL|AN|NC|NZ|NI|NE|NG|NU|NF|MP|NO|OM|PK|PW|PS|PA|PG|PY|PE|PH|PN|PL|PT|PR|QA|RE|RO|RU|RW|SH|KN|LC|PM|VC|WS|SM|ST|SA|SN|CS|SC|SL|SG|SK|SI|SB|SO|ZA|GS|ES|LK|SD|SR|SJ|SZ|SE|CH|SY|TW|TJ|TZ|TH|TL|TG|TK|TO|TT|TN|TR|TM|TC|TV|UG|UA|AE|GB|US|UM|UY|UZ|VU|VE|VN|VG|VI|WF|EH|YE|ZM|ZW|RS|ME|EU)|([a-zA-Z]{1})|([a-zA-Z]{3,4}))(-[a-zA-Z0-9:/\-]{1,11})"
+                    /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="otherRecordId"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:extension base="xs:string"&gt;
+                    &lt;xs:attribute name="localType" type="xs:anyURI" /&gt;
+                &lt;/xs:extension&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:attributeGroup name="localType"&gt;
+        &lt;xs:attribute name="localType" type="xs:anyURI" /&gt;
+    &lt;/xs:attributeGroup&gt;
+
+    &lt;xs:complexType name="maintenanceAgency"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="agencyCode" type="agencyCode"/&gt;
+                &lt;xs:element name="agencyName" type="agencyName"/&gt;
+                &lt;xs:element name="otherAgencyCode" type="otherAgencyCode" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="maintenanceStatus"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="cancelled"/&gt;
+                            &lt;xs:enumeration value="deleted"/&gt;
+                            &lt;xs:enumeration value="deletedMerged"/&gt;
+                            &lt;xs:enumeration value="deletedReplaced"/&gt;
+                            &lt;xs:enumeration value="deletedSplit"/&gt;
+                            &lt;xs:enumeration value="derived"/&gt;
+                            &lt;xs:enumeration value="new"/&gt;
+                            &lt;xs:enumeration value="revised"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="maintenanceHistory"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="maintenanceEvent" type="maintenanceEvent" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="maintenanceEvent"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="agent" type="agent"/&gt;
+                &lt;xs:element name="agentType" type="agentType"/&gt;
+                &lt;xs:element name="eventDateTime" type="eventDateTime"/&gt;
+                &lt;xs:element name="eventType" type="eventType"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="eventType"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="created"/&gt;
+                            &lt;xs:enumeration value="revised"/&gt;
+                            &lt;xs:enumeration value="deleted"/&gt;
+                            &lt;xs:enumeration value="cancelled"/&gt;
+                            &lt;xs:enumeration value="derived"/&gt;
+                            &lt;xs:enumeration value="updated"/&gt;
+                            &lt;xs:enumeration value="published"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="eventDateTime" mixed="true"&gt;
+            &lt;xs:attribute name="standardDateTime" type="m.data.standardDateTime"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="m.data.standardDateTime"&gt;
+        &lt;xs:union&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:date"&gt;
+                    &lt;xs:maxInclusive value="2099-12-31"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:gYear"&gt;
+                    &lt;xs:maxInclusive value="2099"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:gYearMonth"&gt;
+                    &lt;xs:maxInclusive value="2099-12"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:dateTime"&gt;
+                    &lt;xs:maxInclusive value="2099-12-31T23:59:59"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:union&gt;
+    &lt;/xs:simpleType&gt;
+    &lt;xs:complexType name="agentType"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="human"/&gt;
+                            &lt;xs:enumeration value="machine"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="agent" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="languageDeclarations"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="languageDeclaration" type="languageDeclaration" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="languageDeclaration"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="language" type="language"/&gt;
+                &lt;xs:element name="script" type="script"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="language" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attribute name="languageCode" use="required"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:pattern value="[a-z]{3}"/&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="script" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attributeGroup ref="a.scriptCode"/&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:attributeGroup name="a.scriptCode"&gt;
+        &lt;xs:attribute name="scriptCode"&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:pattern value="[A-Z][a-z]{3}"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:attributeGroup&gt;
+
+    &lt;xs:complexType name="conventionDeclaration"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="abbreviation" type="abbreviation" minOccurs="0"/&gt;
+                &lt;xs:element name="citation" type="citation" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="abbreviation" mixed="true"&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="citation" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+            &lt;xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="localControl"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="term" type="term" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:choice minOccurs="0"&gt;
+                    &lt;xs:element name="date" type="date"/&gt;
+                    &lt;xs:element name="dateRange" type="dateRange"/&gt;
+                &lt;/xs:choice&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="localType"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="term"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="simple"/&gt;
+                            &lt;xs:enumeration value="extended"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                    &lt;xs:attributeGroup ref="m.entryLanguageAttributes"/&gt;
+                    &lt;xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/&gt;
+                    &lt;xs:attribute name="vocabularySource" type="xs:anyURI"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:attributeGroup name="m.entryLanguageAttributes"&gt;
+        &lt;xs:attributeGroup ref="a.scriptCode"/&gt;
+        &lt;xs:attribute ref="xml:lang"/&gt;
+        &lt;xs:attribute name="transliteration" type="xs:NMTOKEN"/&gt;
+    &lt;/xs:attributeGroup&gt;
+
+    &lt;xs:complexType name="date" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attribute name="localType" type="xs:anyURI"/&gt;
+            &lt;xs:attributeGroup ref="m.dateSingle"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:attributeGroup name="m.dateSingle"&gt;
+        &lt;xs:attribute name="standardDate" type="m.data.standardDate"/&gt;
+        &lt;xs:attribute name="notBefore" type="m.data.standardDate"/&gt;
+        &lt;xs:attribute name="notAfter" type="m.data.standardDate"/&gt;
+    &lt;/xs:attributeGroup&gt;
+    &lt;xs:complexType name="dateRange"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="fromDate" type="fromDate"/&gt;
+                &lt;xs:element name="toDate" type="toDate"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute name="localType" type="xs:anyURI"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="fromDate" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="m.dateSingle"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="toDate" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="m.dateSingle"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:simpleType name="m.data.standardDate"&gt;
+        &lt;xs:union&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:date"&gt;
+                    &lt;xs:maxInclusive value="2099-12-31"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:gYear"&gt;
+                    &lt;xs:maxInclusive value="2099"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:gYearMonth"&gt;
+                    &lt;xs:maxInclusive value="2099-12"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:union&gt;
+    &lt;/xs:simpleType&gt;
+
+    &lt;xs:complexType name="localTypeDeclaration"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="citation" type="citation"/&gt;
+                &lt;xs:element name="abbreviation" type="abbreviation" minOccurs="0"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="publicationStatus"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="inProcess"/&gt;
+                            &lt;xs:enumeration value="approved"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="sources"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="source" type="source" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="source"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="sourceEntry" type="sourceEntry" minOccurs="0"/&gt;
+                &lt;xs:choice minOccurs="0"&gt;
+                    &lt;xs:element name="objectXMLWrap" type="objectXMLWrap"/&gt;
+                    &lt;xs:element name="objectBinWrap" type="objectBinWrap"/&gt;
+                &lt;/xs:choice&gt;
+                &lt;xs:element minOccurs="0" name="descriptiveNote" type="descriptiveNote"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="sourceEntry" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="m.entryLanguageAttributes"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="objectXMLWrap"&gt;
+        
+            &lt;xs:group ref="e.anyName"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="objectBinWrap"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:extension base="xs:base64Binary"&gt;
+                &lt;/xs:extension&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:group name="e.anyName"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:any processContents="skip"/&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:group&gt;
+
+    &lt;xs:complexType name="agencyCode" mixed="true"&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="agencyName" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="otherAgencyCode" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="localType"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="descriptiveNote"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="p" type="p" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="p" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+
+    &lt;!-- ##################
+        ARCHGUIDE
+    ################### --&gt;
+
+
+    &lt;xs:complexType name="archguide"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="identity" type="identity"/&gt;
+                &lt;xs:element name="desc" type="desc"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="identity"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="repositorid" type="repositorid" minOccurs="0"/&gt;
+                &lt;xs:element name="otherRepositorId" type="otherRepositorId" minOccurs="0"/&gt;
+                &lt;xs:element name="autform" type="autform" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="parform" type="parform" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="nonpreform" type="nonpreform" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="repositoryType" type="repositoryType" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repositorid"&gt;
+        
+            &lt;xs:attribute name="countrycode" use="required" type="xs:NMTOKEN"/&gt;
+            &lt;xs:attribute name="repositorycode" type="xs:NMTOKEN"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="otherRepositorId" mixed="true"&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="autform" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="parform" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="nonpreform" mixed="true"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="useDates" type="useDates"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="useDates"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:group ref="m.dates" /&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:group name="m.dates"&gt;
+        &lt;xs:choice&gt;
+            &lt;xs:element name="date" type="date"/&gt;
+            &lt;xs:element name="dateRange" type="dateRange"/&gt;
+            &lt;xs:element name="dateSet" type="dateSet"/&gt;
+        &lt;/xs:choice&gt;
+    &lt;/xs:group&gt;
+    &lt;xs:complexType name="dateSet"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:choice&gt;
+                    &lt;xs:element name="date" type="date"/&gt;
+                    &lt;xs:element name="dateRange" type="dateRange"/&gt;
+                &lt;/xs:choice&gt;
+                &lt;xs:choice maxOccurs="unbounded"&gt;
+                    &lt;xs:element name="date" type="date"/&gt;
+                    &lt;xs:element name="dateRange" type="dateRange"/&gt;
+                &lt;/xs:choice&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repositoryType"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="National archives"/&gt;
+                            &lt;xs:enumeration value="Regional archives"/&gt;
+                            &lt;xs:enumeration value="County/local authority archives"/&gt;
+                            &lt;xs:enumeration value="Municipal archives"/&gt;
+                            &lt;xs:enumeration value="Specialised government archives"/&gt;
+                            &lt;xs:enumeration value="Private persons and family archives"/&gt;
+                            &lt;xs:enumeration value="Church and religious archives"/&gt;
+                            &lt;xs:enumeration value="Business archives"/&gt;
+                            &lt;xs:enumeration value="University and research archives"/&gt;
+                            &lt;xs:enumeration value="Media archives"/&gt;
+                            &lt;xs:enumeration value="Archives of political parties, of popular/labour movement and other non-governmental organisations, associations, agencies and foundations"/&gt;
+                            &lt;xs:enumeration value="Specialised non-governmental archives and archives of other cultural (heritage) institutions"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="desc"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="repositories" type="repositories"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="repositories"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="repository" type="repository" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repository"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="repositoryName" type="repositoryName" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="repositoryRole" type="repositoryRole" minOccurs="0"/&gt;
+                &lt;xs:element name="geogarea" type="geogarea"/&gt;
+                &lt;xs:element name="location" type="location" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="telephone" type="telephone" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="fax" type="fax" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="email" type="email" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="directions" type="directions" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="repositorhist" type="repositorhist" minOccurs="0"/&gt;
+                &lt;xs:element name="repositorfound" type="repositorfound" minOccurs="0"/&gt;
+                &lt;xs:element name="repositorsup" type="repositorsup" minOccurs="0"/&gt;
+                &lt;xs:element name="buildinginfo" type="buildinginfo" minOccurs="0"/&gt;
+                &lt;xs:element name="adminhierarchy" type="adminhierarchy" minOccurs="0"/&gt;
+                &lt;xs:element name="holdings" type="holdings" minOccurs="0"/&gt;
+                &lt;xs:element name="timetable" type="timetable"/&gt;
+                &lt;xs:element name="access" type="access"/&gt;
+                &lt;xs:element name="accessibility" type="accessibility" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="services" type="services" minOccurs="0"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="repositoryName" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repositoryRole"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="Branch"/&gt;
+                            &lt;xs:enumeration value="Head quarter"/&gt;
+                            &lt;xs:enumeration value="Interim archive"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="geogarea"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="Africa"/&gt;
+                            &lt;xs:enumeration value="Antarctica"/&gt;
+                            &lt;xs:enumeration value="Asia"/&gt;
+                            &lt;xs:enumeration value="Australia"/&gt;
+                            &lt;xs:enumeration value="Europe"/&gt;
+                            &lt;xs:enumeration value="North America"/&gt;
+                            &lt;xs:enumeration value="South America"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="location"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="country" type="country"/&gt;
+            &lt;xs:element name="firstdem" type="firstdem" minOccurs="0"/&gt;
+            &lt;xs:element name="secondem" type="secondem" minOccurs="0"/&gt;
+            &lt;xs:element name="municipalityPostalcode" type="municipalityPostalcode"/&gt;
+            &lt;xs:element name="localentity" type="localentity" minOccurs="0"/&gt;
+            &lt;xs:element name="street" type="street"/&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute name="localType" type="xs:anyURI" use="required"/&gt;
+        &lt;xs:attribute name="longitude" type="xs:NMTOKEN"/&gt;
+        &lt;xs:attribute name="latitude" type="xs:NMTOKEN"/&gt;
+    &lt;/xs:complexType&gt;
+    
+    &lt;xs:complexType name="country" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="firstdem" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="secondem" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="municipalityPostalcode" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="localentity" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="street" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="telephone" mixed="true"&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="fax" mixed="true"&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="email" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="href" /&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="webpage" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="href" /&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="directions" mixed="true"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="citation" type="citation" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute ref="xml:lang" /&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="repositorhist"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="repositorfound"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="date" type="date"/&gt;
+                &lt;xs:element name="rule" type="rule" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repositorsup"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="date" type="date"/&gt;
+                &lt;xs:element name="rule" type="rule" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="rule" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="buildinginfo"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="building" type="building" minOccurs="0"/&gt;
+                &lt;xs:element name="repositorarea" type="repositorarea" minOccurs="0"/&gt;
+                &lt;xs:element name="lengthshelf" type="lengthshelf" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="building"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="repositorarea"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="lengthshelf"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="num" mixed="true"&gt;
+            &lt;xs:attribute name="unit" use="required"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:token"&gt;
+                        &lt;xs:enumeration value="squaremetre"/&gt;
+                        &lt;xs:enumeration value="linearmetre"/&gt;
+                        &lt;xs:enumeration value="site"/&gt;
+                        &lt;xs:enumeration value="book"/&gt;
+                        &lt;xs:enumeration value="title"/&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="adminhierarchy"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="adminunit" type="adminunit" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="adminunit" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="holdings"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:group ref="m.dates" minOccurs="0"/&gt;
+                &lt;xs:element name="extent" type="extent" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="extent"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="timetable"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="opening" type="opening" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="closing" type="closing" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="opening" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="closing" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attribute name="standardDate" type="m.data.standardDate"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="access"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="restaccess" type="restaccess" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="termsOfUse" type="termsOfUse" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:attributeGroup name="question"&gt;
+        &lt;xs:attribute name="question" use="required"&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:token"&gt;
+                    &lt;xs:enumeration value="yes"/&gt;
+                    &lt;xs:enumeration value="no"/&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:attributeGroup&gt;
+    &lt;xs:complexType name="restaccess" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="termsOfUse" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="accessibility" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="services"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="searchroom" type="searchroom" minOccurs="0"/&gt;
+                &lt;xs:element name="library" type="library" minOccurs="0"/&gt;
+                &lt;xs:element name="internetAccess" type="internetAccess" minOccurs="0"/&gt;
+                &lt;xs:element name="techservices" type="techservices" minOccurs="0"/&gt;
+                &lt;xs:element name="recreationalServices" type="recreationalServices" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="searchroom"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="contact" type="contact" minOccurs="0"/&gt;
+                &lt;xs:element name="workPlaces" type="workPlaces" minOccurs="0"/&gt;
+                &lt;xs:element name="computerPlaces" type="computerPlaces" minOccurs="0"/&gt;
+                &lt;xs:element name="microfilmPlaces" type="microfilmPlaces" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="photographAllowance" type="photographAllowance" minOccurs="0"/&gt;
+                &lt;xs:element name="readersTicket" type="readersTicket" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="advancedOrders" type="advancedOrders" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="researchServices" type="researchServices" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="contact"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="telephone" type="telephone" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="email" type="email" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="nameEntry" type="nameEntry" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="nameEntry"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element maxOccurs="unbounded" name="part" type="part"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="part" mixed="true"&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+            &lt;xs:attribute name="localType" type="xs:anyURI"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="workPlaces"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="computerPlaces"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="microfilmPlaces"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="photographAllowance"&gt;
+        
+            &lt;xs:simpleContent&gt;
+                &lt;xs:restriction base="xs:anyType"&gt;
+                    &lt;xs:simpleType&gt;
+                        &lt;xs:restriction base="xs:token"&gt;
+                            &lt;xs:enumeration value="depending on the material"/&gt;
+                            &lt;xs:enumeration value="no"/&gt;
+                            &lt;xs:enumeration value="yes"/&gt;
+                            &lt;xs:enumeration value="yes (without flash)"/&gt;
+                        &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleContent&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="readersTicket" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="advancedOrders" mixed="true"&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+            &lt;xs:attribute ref="xml:lang"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="researchServices"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="library"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="contact" type="contact" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="monographicpub" type="monographicpub" minOccurs="0"/&gt;
+                &lt;xs:element name="serialpub" type="serialpub" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="monographicpub"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="serialpub"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="num" type="num"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="internetAccess"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="techservices"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="restorationlab" type="restorationlab" minOccurs="0"/&gt;
+                &lt;xs:element name="reproductionser" type="reproductionser" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="restorationlab"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:element name="contact" type="contact" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="reproductionser"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:element name="contact" type="contact" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="microformser" type="microformser" minOccurs="0"/&gt;
+                &lt;xs:element name="photographser" type="photographser" minOccurs="0"/&gt;
+                &lt;xs:element name="digitalser" type="digitalser" minOccurs="0"/&gt;
+                &lt;xs:element name="photocopyser" type="photocopyser" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="microformser"&gt;
+        
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="photographser"&gt;
+        
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="digitalser"&gt;
+        
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="photocopyser"&gt;
+        
+            &lt;xs:attributeGroup ref="question"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="recreationalServices"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="refreshment" type="refreshment" minOccurs="0"/&gt;
+                &lt;xs:element name="exhibition" type="exhibition" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="toursSessions" type="toursSessions" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="otherServices" type="otherServices" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="refreshment"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="exhibition"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="toursSessions"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="otherServices"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:element name="webpage" type="webpage" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+
+    &lt;!-- ##################
+       RELATIONS
+   ################### --&gt;
+
+
+    &lt;xs:complexType name="relations"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="resourceRelation" type="resourceRelation" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="eagRelation" type="eagRelation" minOccurs="0" maxOccurs="unbounded"/&gt;
+            &lt;/xs:sequence&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="resourceRelation"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="relationEntry" type="relationEntry"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:group ref="m.dates" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute name="resourceRelationType" use="required"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:token"&gt;
+                        &lt;xs:enumeration value="creatorOf"/&gt;
+                        &lt;xs:enumeration value="subjectOf"/&gt;
+                        &lt;xs:enumeration value="other"/&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="relationEntry" mixed="true"&gt;
+            &lt;xs:attribute name="localType" type="xs:anyURI"/&gt;
+            &lt;xs:attributeGroup ref="m.entryLanguageAttributes"/&gt;
+        
+    &lt;/xs:complexType&gt;
+
+    &lt;xs:complexType name="eagRelation"&gt;
+        
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="relationEntry" type="relationEntry" minOccurs="0" maxOccurs="unbounded"/&gt;
+                &lt;xs:element name="descriptiveNote" type="descriptiveNote" minOccurs="0"/&gt;
+                &lt;xs:group ref="m.dates" minOccurs="0"/&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attribute name="eagRelationType" use="required"&gt;
+                &lt;xs:simpleType&gt;
+                    &lt;xs:restriction base="xs:token"&gt;
+                        &lt;xs:enumeration value="hierarchical-child"/&gt;
+                        &lt;xs:enumeration value="hierarchical-parent"/&gt;
+                        &lt;xs:enumeration value="temporal-earlier"/&gt;
+                        &lt;xs:enumeration value="temporal-later"/&gt;
+                        &lt;xs:enumeration value="associative"/&gt;
+                    &lt;/xs:restriction&gt;
+                &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="lastDateTimeVerified" type="m.data.standardDateTime"/&gt;
+            &lt;xs:attributeGroup ref="href"/&gt;
+        
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE></BODY></HTML>

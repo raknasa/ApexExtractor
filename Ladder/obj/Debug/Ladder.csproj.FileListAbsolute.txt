@@ -7,3 +7,33 @@ c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\Ladder\obj\De
 c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\Ladder\obj\Debug\Ladder.pdb
 c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\Ladder\bin\Debug\saxon9he-api.dll
 c:\users\rakna\documents\visual studio 2012\Projects\APEXExtraktor\Ladder\bin\Debug\saxon9he.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\Ladder.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\Ladder.pdb
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\log4net.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\saxon9he-api.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\saxon9he.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Core.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.XML.API.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.Runtime.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Text.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Charsets.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Util.dll
+C:\APEX\APEXExtraktor\Ladder\bin\Debug\log4net.xml
+C:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.csprojResolveAssemblyReference.cache
+C:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.dll
+C:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.pdb
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\Ladder.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\Ladder.pdb
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\log4net.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\saxon9he-api.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\saxon9he.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Core.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.XML.API.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.Runtime.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Text.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Charsets.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\IKVM.OpenJDK.Util.dll
+D:\APEX\APEXExtraktor\Ladder\bin\Debug\log4net.xml
+D:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.csprojResolveAssemblyReference.cache
+D:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.dll
+D:\APEX\APEXExtraktor\Ladder\obj\Debug\Ladder.pdb

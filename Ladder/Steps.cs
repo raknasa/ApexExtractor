@@ -35,10 +35,19 @@
         public static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private bool _logEnabled;
-
+        private DirectoryInfo _logFolder;
+    
         #endregion Fields
 
         #region Properties
+
+        public DirectoryInfo LogFolder
+        {
+            get { return _logFolder; }
+            set { _logFolder = value; }
+          
+           
+        }
 
         /// <summary>
         ///     Gets or sets a value indicating whether [log enabled].
@@ -63,24 +72,33 @@
             }
         }
 
+   
         #endregion Properties
 
         #region Methods
 
-        public FileInfo GetDaisyXML()
-        {
-            ISQLWorker worker = new SQLWorker();
-            return worker.QueryDaisy();
-        }
-
-        public void TotalFlow(FileInfo apexFile)
+        public int GetDaisyXML(FileInfo resultat, int sidsthentet)
         {
             try
             {
-                FileInfo result = GetDaisyXML();
-                TransformDaisy2APEX(result, apexFile);
-                ValidateAPEXFile(apexFile);
-                Log.Debug("TotalFlow done!");
+                ISQLWorker worker = new SQLWorker();
+                return  worker.QueryDaisy(resultat, sidsthentet);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+                return sidsthentet;
+            }
+        }
+
+
+
+        public void TransformDaisy2APEX(DirectoryInfo sourcedir, DirectoryInfo targetdir)
+        {
+            try
+            {
+                IXSLTWorker worker = new XSLTWorker();
+                worker.TransformXML(sourcedir, targetdir);
             }
             catch (Exception e)
             {
@@ -88,27 +106,34 @@
             }
         }
 
-        public void TransformDaisy2APEX(FileInfo sourceFile, FileInfo targetFile)
-        {
-            IXSLTWorker worker = new XSLTWorker();
-            worker.TransformXML(sourceFile, targetFile);
-        }
-
         public void ValidateAPEXFile(FileInfo sourceFile)
         {
-            IXSDValidator worker = new XSDValidator();
-            worker.ValidateXML(sourceFile);
+            try
+            {
+                IXSDValidator worker = new XSDValidator();
+                worker.ValidateXML(sourceFile);
+            }
+            catch (Exception e)
+            {
+
+                Log.Error(e);
+            }
+          
         }
 
-        private static void InitateLog()
+        public void InitateLog()
         {
+           
+           
             var hierarchy = (Hierarchy) LogManager.GetRepository();
             hierarchy.Root.RemoveAllAppenders(); /*Remove any other appenders*/
             var fileAppender = new FileAppender
                                    {
-                                       AppendToFile = false,
+                                      // AppendToFile = false,
+                                      AppendToFile = true,
                                        LockingModel = new FileAppender.MinimalLock(),
-                                       File = "log.txt"
+                                       File = _logFolder.FullName + @"\ApexLog.txt"
+                                      
                                    };
             var pl = new PatternLayout {ConversionPattern = "%d [%2%t] %-5p [%-10c] %m%n%n"};
             pl.ActivateOptions();
@@ -117,7 +142,21 @@
 
             BasicConfigurator.Configure(fileAppender);
         }
+        public void TotalFlow(FileInfo apexFile)
+        {
+            //    try
+            //    {
 
+            //        FileInfo result = GetDaisyXML();
+            //        TransformDaisy2APEX(result, apexFile);
+            //        ValidateAPEXFile(apexFile);
+            //        Log.Debug("TotalFlow done!");
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Log.Error(e);
+            //    }
+        }
         #endregion Methods
     }
 }
